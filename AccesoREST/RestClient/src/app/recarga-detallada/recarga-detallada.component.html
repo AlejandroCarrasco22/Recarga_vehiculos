@@ -1,0 +1,56 @@
+<p *ngIf="mostrarMensaje">{{mensaje}}</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <a class="navbar-brand" [routerLink]="['/users']" id="link_top">Usuarios</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/chargerpoints']" id="link_top">Puntos de carga</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/recharge']" id="link_top">Recargas</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/vehicles']" id="link_top">Vehiculos</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12">
+
+          <h1>Recarga del usuario con id {{Recarga.userId}}</h1>
+
+          <table class="table table-striped" id = "tablaRecarga" >
+              <thead>
+                  <tr class="row">
+                      <th>ID</th>
+                      <th>Id de Usuario</th>
+                      <th>Id de Vehiculo</th>
+                      <th>Id del Punto de Recarga</th>
+                      <th>Precio (€/kwH)</th>
+                      <th>Kw cargados</th>
+                      <th>Precio final (€)</th>
+                      <th>Status</th>
+                      <th>Estado del pago</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="row">
+                      <td><i>{{Recarga.id}}</i></td>
+                      <td><i>{{Recarga.userId}}</i></td>
+                      <td><i>{{Recarga.vehicleId}}</i></td>
+                      <td><i>{{Recarga.chargerpointId}}</i></td>
+                      <td><i>{{Recarga.price}}</i></td>
+                      <td><i>{{Recarga.kw}}</i></td>
+                      <td><i>{{Recarga.status == 'COMPLETED' ? (Recarga.kw.valueOf() * Recarga.price.valueOf()).toFixed(2) : "---"}}</i></td>
+                      <td><i>{{Recarga.status}}</i></td>
+                      <td><i>{{Recarga.payment}}</i></td>
+                  </tr>
+              </tbody>
+          </table>
+        <button type="button" class="btn btn-info" [routerLink] = "['/recharge']">Volver</button>
+      </div>
+  </div>
+</div>

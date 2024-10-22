@@ -1,0 +1,75 @@
+<h1>Registro de nuevo punto de carga</h1>
+
+<div class="row">
+  <div class="col-sm-12">
+    <form (ngSubmit)="onSubmit()" #puntoCargaForm="ngForm" id="puntoCargaForm">
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="address">Dirección</label> <label id="obligatorio_asterisco"> *</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="puntoCarga.address" name="address">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="latitude">Latitud</label> <label id="obligatorio_asterisco"> *</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="puntoCarga.latitude" name="latitude">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="longitude">Longitud</label><label id="obligatorio_asterisco"> *</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="puntoCarga.longitude" name="longitude">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="plugType">Tipo de conector</label><label id="obligatorio_asterisco"> *</label>
+          <select class="form-control" form="puntoCargaForm"
+                 [(ngModel)]="puntoCarga.plugType" name="plugType">
+            <option value="SCHUKO">SCHUKO</option>
+            <option value="CSS">CSS</option>
+            <option value="MENNEKES">MENNEKES</option>
+            <option value="CHADEMO">CHADEMO</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="power">Potencia del cargador</label><label id="obligatorio_asterisco"> *</label>
+          <select class="form-control" form="puntoCargaForm"
+                  [(ngModel)]="puntoCarga.power" name="power">
+            <option value="LENTA">Lenta</option>
+            <option value="MEDIA">Media</option>
+            <option value="RAPIDA">Rápida</option>
+            <option value="ULTRARAPIDA">Ultrarrápida</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="status">Estado del cargador</label><label id="obligatorio_asterisco"> *</label>
+          <select class="form-control" form="puntoCargaForm"
+                  [(ngModel)]="puntoCarga.status" name="status">
+            <option value="MANTENIMIENTO">En mantenimiento</option>
+            <option value="DISPONIBLE">Disponible</option>
+            <option value="EN_SERVICIO">En servicio</option>
+          </select>
+        </div>
+      </fieldset>
+      <div id="map"></div>
+      <label id="requisitosObligatorios">Todos los campos marcados con * son obligatorios.</label>
+      <fieldset class="form-group">
+        <div class="col-sm-offset-2 col-sm-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!puntoCargaForm.form.valid">
+            Confirmar </button>
+        </div>
+      </fieldset>
+    </form>
+    <div *ngIf="errorMensaje" class="alert alert-danger" role="alert">
+      {{ errorMensaje }}
+    </div>
+  </div>
+</div>

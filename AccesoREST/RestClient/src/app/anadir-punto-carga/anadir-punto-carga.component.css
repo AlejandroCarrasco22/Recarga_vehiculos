@@ -1,0 +1,29 @@
+#requisitosObligatorios{
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  color:red;
+}
+
+h1{
+  text-align: center;
+}
+
+#obligatorio_asterisco{
+  color:red;
+  margin-left: 2px;
+}
+
+#map{
+  width: 50%; 
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+

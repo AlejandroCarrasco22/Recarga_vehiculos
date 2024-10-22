@@ -1,0 +1,56 @@
+<p *ngIf="mostrarMensaje">{{mensaje}}</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <a class="navbar-brand" [routerLink]="['/users']" id="link_top">Usuarios</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/chargerpoints']" id="link_top">Puntos de carga</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/recharge']" id="link_top">Recargas</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <h1>Lista de vehiculos registrados en el sistema</h1>
+            <form (ngSubmit)="onSubmit()" class="navbar-form navbar-left" role="search" id="buscador">
+                <div class="form-group">
+                  <input [(ngModel)]="userId" [ngModelOptions]="{standalone: true}" type="text"
+                         class="form-control" placeholder="Introduce el id del usuario">
+                </div>
+                <button type="submit" class="btn btn-info" id = "botonBuscar">Buscar</button>
+            </form>
+            <table class="table table-striped" id = "tablaVehiculos" >
+                <thead>
+                    <tr class="row">
+                        <th>ID</th>
+                        <th>Matrícula</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Capacidad</th>
+                        <th>PlugType</th>
+                        <th>Usuario (Id)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let vehiculo of Vehiculos" class="row">
+                        <td><i>{{vehiculo.id}}</i></td>
+                        <td><i>{{vehiculo.carRegistration}}</i></td>
+                        <td><i>{{vehiculo.brand}}</i></td>
+                        <td><i>{{vehiculo.model}}</i></td>
+                        <td><i>{{vehiculo.capacity}}</i></td>
+                        <td><i>{{vehiculo.plugType}}</i></td>
+                        <td><i>{{vehiculo.userId}}</i></td>
+                        <td><a class="btn btn-danger" (click)="borrarVehiculo(vehiculo.id)">Eliminar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-info" [routerLink] = "['/vehicles/nuevo']">Añadir Nuevo Vehiculo</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Security/JWTAuthorizationFilter.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Model/Enums/PlugType.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/VehiclesApplication.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/LoadDatabase.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Controller/VehiculoControlador.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Exception/UsuarioException.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Configuration/CorsConfig.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Model/Enums/PowerType.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Exception/VehiculoException.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Model/Vehiculo.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Repository/VehiculoRepository.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/vehicles/src/main/java/com/uva/dbcs/vehicles/Model/Enums/StatusType.java

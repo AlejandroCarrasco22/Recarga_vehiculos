@@ -1,0 +1,63 @@
+<p *ngIf="mostrarMensaje">{{mensaje}}</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <a class="navbar-brand" [routerLink]="['/vehicles']" id="link_top">Vehiculos</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/chargerpoints']" id="link_top">Puntos de carga</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/recharge']" id="link_top">Recargas</a>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <h1>Lista de usuarios registrados en el sistema</h1>
+
+            <div class="btn-group" id="botonFiltro">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{filtroSeleccionado}}
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                <li><a (click)="getUsuariosActivados()">Activado</a></li>
+                <li><a (click)="getUsuariosDesactivados()">Desactivado</a></li>
+                <li><a (click)="getUsuarios()">Todos</a></li>
+                </ul>
+            </div>
+            <br>
+
+            <table class="table table-striped" id = "tablaUsuarios">
+                <thead>
+                    <tr class="row">
+                      <th>ID</th>
+                      <th>Alias</th>
+                      <th>Nombre</th>
+                      <th>Apellidos</th>
+                      <th>Email</th>
+                      <th>Tarjeta de pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of Usuarios" class="row">
+                        <td><i>{{usuario.id}}</i></td>
+                        <td><i>{{usuario.name}}</i></td>
+                        <td><i>{{usuario.firstName}}</i></td>
+                        <td><i>{{usuario.lastName}}</i></td>
+                        <td><i>{{usuario.email}}</i></td>
+                        <td><i>{{usuario.paymentCard != "" ? "SI" : "NO"}}</i></td>
+                        <td><a class="btn btn-secondary" [routerLink]= "['/users', usuario.id]" > Editar</a></td>
+                        <td><a class="btn btn-danger" (click)="borrarUsuario(usuario.id)">Eliminar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-info" [routerLink] = "['/users/nuevo']">Añadir Nuevo Usuario</button>
+        </div>
+    </div>
+</div>

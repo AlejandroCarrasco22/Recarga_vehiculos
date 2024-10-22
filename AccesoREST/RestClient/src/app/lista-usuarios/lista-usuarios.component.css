@@ -1,0 +1,17 @@
+#tablaUsuarios{
+    border: 2px solid #000000;
+}
+
+#botonFiltro{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#link_top1, #link_top2{
+    color: #FFFFFF;
+}
+.navbar-brand{
+  color: white;
+}
+

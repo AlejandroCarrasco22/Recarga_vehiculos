@@ -1,0 +1,8 @@
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/Model/Usuario.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/Exception/UsuarioException.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/Security/JWTAuthorizationFilter.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/Controller/UsuarioControlador.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/Configuration/CorsConfig.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/Repository/UsuarioRepository.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/UsersApplication.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/users/src/main/java/com/uva/dbcs/users/LoadDatabase.java

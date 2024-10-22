@@ -1,0 +1,5 @@
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/login/src/main/java/com/uva/dbcs/login/Security/JWTAuthorizationFilter.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/login/src/main/java/com/uva/dbcs/login/LoginApplication.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/login/src/main/java/com/uva/dbcs/login/Configuration/CorsConfig.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/login/src/main/java/com/uva/dbcs/login/Exception/AuthException.java
+/home/andres/INF/4º 1er Cuatrimestre/DBCS/PracticaDBCS/echo/login/src/main/java/com/uva/dbcs/login/Controller/AuthController.java

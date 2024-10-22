@@ -1,0 +1,14 @@
+com/uva/dbcs/vehicles/Model/Enums/PowerType.class
+com/uva/dbcs/vehicles/Controller/VehiculoControlador.class
+com/uva/dbcs/vehicles/Model/Enums/PlugType.class
+com/uva/dbcs/vehicles/LoadDatabase.class
+com/uva/dbcs/vehicles/VehiclesApplication.class
+com/uva/dbcs/vehicles/Configuration/CorsConfig$1.class
+com/uva/dbcs/vehicles/Model/Vehiculo.class
+com/uva/dbcs/vehicles/Model/Enums/StatusType.class
+com/uva/dbcs/vehicles/Exception/UsuarioException.class
+com/uva/dbcs/vehicles/VehiclesApplication$WebSecurityConfig.class
+com/uva/dbcs/vehicles/Security/JWTAuthorizationFilter.class
+com/uva/dbcs/vehicles/Exception/VehiculoException.class
+com/uva/dbcs/vehicles/Repository/VehiculoRepository.class
+com/uva/dbcs/vehicles/Configuration/CorsConfig.class

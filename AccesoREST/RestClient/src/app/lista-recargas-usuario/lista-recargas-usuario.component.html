@@ -1,0 +1,65 @@
+<p *ngIf="mostrarMensaje">{{mensaje}}</p>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <a class="navbar-brand" [routerLink]="['/users']" id="link_top">Usuarios</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/vehicles']" id="link_top">Vehiculos</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/chargerpoints']" id="link_top">Puntos de carga</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>Lista de recargas de usuario</h1>
+      <form (ngSubmit)="onSubmit()" class="navbar-form navbar-left" role="search" id="buscador">
+        <div class="form-group">
+          <input [(ngModel)]="userId" [ngModelOptions]="{standalone: true}" type="text"
+                 class="form-control" placeholder="Introduce el id del usuario">
+        </div>
+        <button type="submit" class="btn btn-info" id = "botonBuscar">Buscar</button>
+      </form>
+
+      <table class="table table-striped" id = "tablaRecargasUsuario" >
+        <thead>
+        <tr class="row">
+          <th>ID</th>
+          <th>Precio (€/kWh)</th>
+          <th>Kw cargados</th>
+          <th>Precio final (€)</th>
+          <th>Estado de la recarga</th>
+          <th>Estado del pago</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let recarga of RecargasUsuario" class="row">
+            <td><i>{{recarga.id}}</i></td>
+            <td><i>{{recarga.price}}</i></td>
+            <td><i>{{recarga.kw.toFixed(2)}}</i></td> <!-- 2 decimales solo -->
+            <td><i>{{recarga.status == 'COMPLETED' ? (recarga.kw.valueOf() * recarga.price.valueOf()).toFixed(2) : "---"}}</i></td>
+            <td><i>{{recarga.status}}</i></td>
+            <td><i>{{recarga.payment}}</i></td>
+            <!-- El precio final son los kW cargados por el precio en € por kw y solo se mostrará cuando la recarga haya finalizado. -->
+            <td><button id="botonEmpezar" *ngIf="recarga.status == 'NOTSTARTED' && recarga.payment != 'CANCELLED'" (click)="accionStart(recarga.id, recarga.userId)">Empezar</button></td>
+            <td><button id="botonFinalizar" *ngIf="recarga.status == 'CHARGING'" (click)="accionFinalizar(recarga.id, recarga.userId)">Finalizar</button></td>
+            <td><button id="botonCancelar" *ngIf="recarga.status == 'NOTSTARTED' && recarga.payment == 'NOTPROCESSED'" (click)="accionCancel(recarga.id, recarga.userId)">Cancelar</button></td>
+            <td><a class="btn btn-secondary" [routerLink]= "RecargasUsuario.length !== 0 ? ['/recharge', recarga.id] : ['/recharge/nuevo']" >Ver en detalle</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-info" [routerLink] = "['/recharge/nuevo']">Nueva Recarga</button>
+      <div *ngIf="errorMensaje" class="alert alert-danger" role="alert">
+        {{ errorMensaje }}
+      </div>
+    </div>
+  </div>
+</div>
+
+

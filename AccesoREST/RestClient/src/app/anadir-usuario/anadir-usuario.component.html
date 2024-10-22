@@ -1,0 +1,61 @@
+<h1>Registro de nuevo usuario</h1>
+
+<div class="row">
+  <div class="col-sm-12">
+    <form (ngSubmit)="onSubmit()" #usuarioForm="ngForm">
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="name">Alias</label> <label id="obligatorio_asterisco"> *</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.name" name="name">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="firstName">Nombre</label> <label id="obligatorio_asterisco"> *</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.firstName" name="firstName">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="lastName">Apellido </label><label id="obligatorio_asterisco"> *</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.lastName" name="lastName">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-3">
+          <label class="control-label" for="paymentCard">Tarjeta de pago</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.paymentCard" name="paymentCard">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-6">
+          <label class="control-label" for="email">Email</label> <label id="obligatorio_asterisco"> *</label>
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.email" name="email">
+        </div>
+      </fieldset>
+      <fieldset class="form-group">
+        <div class="col-sm-6">
+          <label class="control-label" for="password">Contraseña</label> <label id="obligatorio_asterisco"> *</label>
+          <input type="password" class="form-control" required
+                 [(ngModel)]="usuario.password" name="password">
+        </div>
+      </fieldset>
+      <label id="requisitosObligatorios">Todos los campos marcados con * son obligatorios.</label>
+      <fieldset class="form-group">
+        <div class="col-sm-offset-2 col-sm-12">
+          <button type="submit" class="btn btn-primary" [disabled]="!usuarioForm.form.valid">
+            Confirmar </button>
+        </div>
+
+      </fieldset>
+    </form>
+    <div *ngIf="errorMensaje" class="alert alert-danger" role="alert">
+      {{ errorMensaje }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="login" style="text-align: center; margin-top: 50px;">
+  <div class="inicio">
+    <h2>Iniciar Sesión</h2>
+  </div>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <fieldset class="form-group">
+      <div class="col-sm-3">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username"
+               [(ngModel)]="usuario.email" required>
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+      <div class="col-sm-3">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password"
+               [(ngModel)]="usuario.password" required>
+      </div>
+    </fieldset>
+    <div class="btn-group" role="group">
+      <button type="submit" [disabled]="!loginForm.valid">Iniciar Sesión</button>
+    </div>
+  </form>
+</div>

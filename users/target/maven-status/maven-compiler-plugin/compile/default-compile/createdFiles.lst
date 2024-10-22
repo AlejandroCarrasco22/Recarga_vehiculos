@@ -1,0 +1,10 @@
+com/uva/dbcs/users/Configuration/CorsConfig$1.class
+com/uva/dbcs/users/Repository/UsuarioRepository.class
+com/uva/dbcs/users/Exception/UsuarioException.class
+com/uva/dbcs/users/UsersApplication$WebSecurityConfig.class
+com/uva/dbcs/users/Configuration/CorsConfig.class
+com/uva/dbcs/users/Security/JWTAuthorizationFilter.class
+com/uva/dbcs/users/UsersApplication.class
+com/uva/dbcs/users/Model/Usuario.class
+com/uva/dbcs/users/Controller/UsuarioControlador.class
+com/uva/dbcs/users/LoadDatabase.class

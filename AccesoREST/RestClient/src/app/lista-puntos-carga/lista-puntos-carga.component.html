@@ -1,0 +1,60 @@
+
+<p *ngIf="mostrarMensaje">{{mensaje}}</p>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <a class="navbar-brand" [routerLink]="['/users']" id="link_top">Usuarios</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/vehicles']" id="link_top">Vehiculos</a>
+    </div>
+    <div>
+      <a class="navbar-brand" [routerLink]="['/recharge']" id="link_top">Recargas</a>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <h1>Lista de puntos de carga registrados en el sistema</h1>
+            <form (ngSubmit)="onSubmit()" class="navbar-form navbar-left" role="search" id="buscador">
+                <div class="form-group">
+                  <input [(ngModel)]="vehicleId" [ngModelOptions]="{standalone: true}" type="text"
+                         class="form-control" placeholder="Introduce el id del vehiculo">
+                </div>
+                <button type="submit" class="btn btn-info" id = "botonBuscar">Buscar</button>
+            </form>
+            <table class="table table-striped" id = "tablaPuntos" >
+                <thead>
+                    <tr class="row">
+                        <th>ID</th>
+                        <th>Dirección</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th>Tipo de Carga</th>
+                        <th>Potencia</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let puntocarga of Puntos" class="row">
+                        <td><i>{{puntocarga.id}}</i></td>
+                        <td><i>{{puntocarga.address}}</i></td>
+                        <td><i>{{puntocarga.latitude}}</i></td>
+                        <td><i>{{puntocarga.longitude}}</i></td>
+                        <td><i>{{puntocarga.plugType}}</i></td>
+                        <td><i>{{puntocarga.power}}</i></td>
+                        <td><i>{{puntocarga.status}}</i></td>
+                        <td><a class="btn btn-secondary" [routerLink]= "['/chargerpoints', puntocarga.id]" > Editar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-info" [routerLink] = "['/chargerpoints/nuevo']">Añadir Nuevo Punto de carga</button>
+        </div>
+    </div>
+</div>
